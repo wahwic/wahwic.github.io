@@ -1,14 +1,2 @@
-main {
-    background-color: black;
-    color: aliceblue;
-}
+@charset "UTF-8";
 
-footer, header{
-    padding: 1em;
-    color: aliceblue;
-    background-color: darkgreen;
-}
-
-li{
-    font-size: larger;
-}
