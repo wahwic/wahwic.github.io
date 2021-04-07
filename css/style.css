@@ -1,0 +1,10 @@
+html {
+    background-color: black;
+    color: aliceblue;
+}
+
+footer, header{
+    padding: 1em;
+    color: white;
+    background-color:darkgreen
+}
