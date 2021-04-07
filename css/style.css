@@ -1,10 +1,14 @@
-html {
+main {
     background-color: black;
     color: aliceblue;
 }
 
 footer, header{
     padding: 1em;
-    color: white;
-    background-color:darkgreen
+    color: aliceblue;
+    background-color: darkgreen;
+}
+
+li{
+    font-size: larger;
 }
