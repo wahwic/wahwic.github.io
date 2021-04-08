@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Autor suboru: Katarina Zakova -->
+<!-- Posledna aktualizacia: oktober 2017 -->
+<!--http://www.vodicak.sk/znacky/-->
+<znacky>
+  <znacka>
+    <kategoria>
+      <skratka>B</skratka>
+      <vyklad>Zákazové značky</vyklad>
+    </kategoria>
+    <img>b1.png</img>
+    <text>
+      <sk>Zákaz vjazdu všetkých vozidiel (v oboch smeroch)</sk>
+      <en>No Traffic (Both Ways)</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>B</skratka>
+      <vyklad>Zákazové značky</vyklad>
+    </kategoria>
+    <img>b2.png</img>
+    <text>
+      <sk>Zákaz vjazdu všetkých vozidiel</sk>
+      <en>No Entry</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>B</skratka>
+      <vyklad>Zákazové značky</vyklad>
+    </kategoria>
+    <img>b28.png</img>
+    <text>
+      <sk>Zákaz otáčania</sk>
+      <en>No U-Turn</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>A</skratka>
+      <vyklad>Výstražné značky</vyklad>
+    </kategoria>
+    <img>a5.png</img>
+    <text>
+      <sk>Nerovnosť vozovky</sk>
+      <en>Uneven Road</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>A</skratka>
+      <vyklad>Výstražné značky</vyklad>
+    </kategoria>
+    <img>a12.png</img>
+    <text>
+      <sk>Svetelné signály</sk>
+      <en>Traffic Signal</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>C</skratka>
+      <vyklad>Príkazové značky</vyklad>
+    </kategoria>
+    <img>c4a.png</img>
+    <text>
+      <sk>Prikázaný smer jazdy vpravo a vľavo</sk>
+      <en>Go Left or Right</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>C</skratka>
+      <vyklad>Príkazové značky</vyklad>
+    </kategoria>
+    <img>c7.png</img>
+    <text>
+      <sk>Kruhový objazd</sk>
+      <en>Roundabout</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>P</skratka>
+      <vyklad>Značky upravujúce prednosť v jazde</vyklad>
+    </kategoria>
+    <img>p1.png</img>
+    <text>
+      <sk>Daj prednosť v jazde</sk>
+      <en>Stop Give Way</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>II</skratka>
+      <vyklad>Informatívne iné značky</vyklad>
+    </kategoria>
+    <img>ii11.png</img>
+    <text>
+      <sk>Reštaurácia</sk>
+      <en>Restaurant</en>
+    </text>
+  </znacka>
+</znacky>  

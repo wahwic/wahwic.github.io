@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="sk">
+    <head>
+        <meta charset="UTF-8">
+        <title>Záverečné zadanie</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+		<link rel="manifest" href="img/favicon/manifest.json">
+		<meta name="theme-color" content="#ffffff">
+		<script src="libs/jquery-3.2.1.min.js"></script>
+    </head>
+    <body>
+		<div id="site">
+			<header>
+				<h1>Návod</h1>
+			</header>
+			<ul id="menu">
+				<li id="butt" onclick="location.href='index.html';">&#60;== Späť</li>
+			</ul>
+			<div id="core">
+				<h2>Začiatok hry</h2>
+				<span>Hra začína stlačením tlačítka "Nová hra". Vygeneruje sa pole desiatich značiek, z ktorého sa značky vykresľujú po jednom. Pre každý obrázok sa zobrazí aj náhodný popis. Vašou úlohou je obrázok potiahnúť na zafarbený obdĺžnik na stránke. Na <span id="nespravne" class="whitetxt">červený</span>, pokiaľ obrázok nieje popísaný daným popisom, a na <span id="spravne" class="whitetxt">zelený</span>, ak áno.</span>
+				<h2>Bodovanie</h2>
+				<span>Za každú správnu odpoveď získavate 1 bod. Za nesprávnu sa 0.5 bodu odpočíta. Penalizácia za vrátenie kola je 0.5b. Na konci sa z ubehnutého času hry od konečného skóre ešte odpočíta časť podľa vzorca:</span>
+				<aside>Konečné skóre = Skóre za hru - Uplynuté sekundy*0.1</aside>
+				<h2>Krok späť</h2>
+				<span>V menu je tlačidlo kroku späť zobrazené pokrútenou šípkou, ktoré sa každú hru dá použiť tri krát, s penalizáciou 0.5b za každý jeden.</span>
+				<h2>Reset hry</h2>
+				<span>Pokiaľ chcete zopakovať hru s rovnakými úlohami, dá sa to pomocou tlačidla "Reset".</span>
+				<h2>Uloženie hry</h2>
+				<span>Aktuálny stav hry sa kedykoľvek dá uložiť tlačidlom "Uložiť hru".</span>
+				<h2>Nahranie hry</h2>
+				<span>Uložený stav hry sa kedykoľvek dá načítať tlačidlom "Načítať hru".</span>
+				<h2>Koniec hry</h2>
+				<span>Hra končí po desiatich kolách, kedy sa vám vypíše nazbierané skóre. Aktuálnu hru môžte skúsiť zahrať znova stlačením na tlačítko "Reset".</span>
+			</div>
+			<footer id="foot">
+				<span id="datum"></span>
+				<span>Site by Sam K.</span>
+				<span id="odkaz"><a href="kniznica.html">Knižnica</a> <a href="formular.html">Formulár</a></span>
+			</footer>
+		</div>
+		
+		<script src="libs/skript.js"></script>
+    </body>
+</html>
