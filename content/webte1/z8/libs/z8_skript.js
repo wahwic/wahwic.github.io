@@ -112,7 +112,7 @@ function checkAnswer(event, ui){
 		$(".answer").css('opacity', function(i,o){
 			return parseFloat(o).toFixed(1) === '1' ? 1 : 0;
 		});
-		finalscore = score - (timedone*0.1);
+		finalscore = (score - (timedone*0.05)).toFixed(1);
 		if(checkhighscore(finalscore)){
 			$('#board').empty();
 			$('#board').append(finalscore);
@@ -159,10 +159,10 @@ function resetgame(){
 	}
 	$('#menu').empty();
 	$('#menu').append('<li id="butt" class="list-group-item list-group-item-action bg-transparent" onclick="newgame()">Nová hra</li>');
-	$('#menu').append('<li id="buttreset" class="list-group-item list-group-item-action bg-transparent" onclick="resetgame()">Reset</li><br>');
+	$('#menu').append('<li id="buttreset" class="list-group-item list-group-item-action bg-transparent" onclick="resetgame()">Opakovať hru</li><br>');
 	$('#menu').append('<li id="buttsave" class="list-group-item list-group-item-action bg-transparent" onclick="savesession()">Uložiť hru</li>');
 	$('#menu').append('<li id="buttload" class="list-group-item list-group-item-action bg-transparent" onclick="loadsession()">Načítať hru</li><br>');
-	$('#menu').append('<li><button id="buttback" type="button" class="btn btn-outline-dark" onclick="goback()" disabled><img src="img/menu/undo.png" draggable="false"></button></li>');
+	$('#menu').append('<li><button id="buttback" type="button" class="btn btn-outline-dark" onclick="goback()" disabled>&#60;== Vrátiť ťah</button></li>');
 	if(klok != null) {clearInterval(klok);}
 	start = new Date;
 	klok = setInterval(function() {$('.Timer').text("Uplynutý čas: " + Math.round((new Date - start) / 1000, 0) + "s");}, 1000);

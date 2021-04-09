@@ -22,38 +22,38 @@
 		</header>
 		<main class="container-fluid">
 		<div class="row">
-			<div class="col-1">
+			<div class="col-md-1">
 				<ul id="menu" class="list-group list-group-flush text-white bg-transparent">
 					<li id="butt" class="list-group-item list-group-item-action bg-transparent" onclick="newgame()">Nová hra</li>
 					<li id="navod" class="list-group-item list-group-item-action bg-transparent" onclick="location.href='navod.html';">Návod</li>
 					<li id="buttload" class="list-group-item list-group-item-action bg-transparent" onclick="loadsession()">Načítať hru</li>
 				</ul>
 			</div>
-			<div class="col-10 container">
+			<div class="col-md-10 container">
 				<div id="gameWindow">
 					<div id="Endgame" class="text-center"></div>
 					<div class="container-fluid">
 						<div class="row">
-							<div class="col-5">
-								<span id="turn"></span>
-							</div>
-							<div id="currentgame" class="col-2 text-center">
-								<span class="Timer"></span><br>
-								<span class="Score"></span>
-							</div>
-							<div class="col-5"></div>
-						</div>
-					</div>
-					<div class="container-fluid">
-						<div class="row">
 							<div id="spravne" class="answer col-3 bg-success"></div>
-							<div id="output" class="col-6"></div>
+							<div class="col-6">
+								<div class="row">
+									<div class="col-5">
+										<span id="turn"></span>
+									</div>
+									<div id="currentgame" class="col-2 text-center">
+										<span class="Timer"></span><br>
+										<span class="Score"></span>
+									</div>
+								</div>
+								<div class="col-5"></div>
+								<div id="output" class="row"></div>
+							</div>
 							<div id="nespravne" class="answer col-3 bg-danger"></div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div id="scoreboard" class="col-1 text-center text-white">
+			<div id="scoreboard" class="col-md-1 text-center text-white">
 				<span>Top skóre</span>
 				<p id="board" class="fs-1">0</p>
 			</div>
