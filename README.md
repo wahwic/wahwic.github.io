@@ -1,3 +1,3 @@
 # wahwic.github.io
-WorkInProgress
+WorkInProgress  
 an attempt to modernize college web projects
