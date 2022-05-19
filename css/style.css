@@ -3,9 +3,9 @@
 #site {
     background-color: #c49260;
 }
-#gameWindow {
+/* #gameWindow {
     background-color: #ffd9b3;
-}
+} */
 #menu li{
     cursor: pointer;
 }
@@ -28,9 +28,6 @@
     opacity: 0;
     transition: opacity 0.4s;
     -webkit-transition: opacity 0.4s;
-}
-.onetry{
-    margin: 2%;
 }
 #posfinished{
     background-color: #333333;

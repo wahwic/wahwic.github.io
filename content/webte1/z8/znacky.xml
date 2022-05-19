@@ -30,10 +30,296 @@
       <skratka>B</skratka>
       <vyklad>Zákazové značky</vyklad>
     </kategoria>
+    <img>b3.png</img>
+    <text>
+      <sk>Zákaz vjazdu všetkých motorových vozidiel</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>B</skratka>
+      <vyklad>Zákazové značky</vyklad>
+    </kategoria>
+    <img>b4.png</img>
+    <text>
+      <sk>Zákaz vjazdu všetkých motorových vozidiel s výnimkou motocyklov bez postranného vozíka</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>B</skratka>
+      <vyklad>Zákazové značky</vyklad>
+    </kategoria>
+    <img>b5.png</img>
+    <text>
+      <sk>Zákaz vjazdu osobných automobilov</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>B</skratka>
+      <vyklad>Zákazové značky</vyklad>
+    </kategoria>
+    <img>b6.png</img>
+    <text>
+      <sk>Zákaz vjazdu nákladných automobilov</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>B</skratka>
+      <vyklad>Zákazové značky</vyklad>
+    </kategoria>
+    <img>b7.png</img>
+    <text>
+      <sk>Zákaz vjazdu autobusov</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>B</skratka>
+      <vyklad>Zákazové značky</vyklad>
+    </kategoria>
+    <img>b11.png</img>
+    <text>
+      <sk>Zákaz vjazdu bicyklov</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>B</skratka>
+      <vyklad>Zákazové značky</vyklad>
+    </kategoria>
+    <img>b13.png</img>
+    <text>
+      <sk>Zákaz vstupu chodcov</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>B</skratka>
+      <vyklad>Zákazové značky</vyklad>
+    </kategoria>
+    <img>b18.png</img>
+    <text>
+      <sk>Zákaz vjazdu vyznačených vozidiel</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>B</skratka>
+      <vyklad>Zákazové značky</vyklad>
+    </kategoria>
+    <img>b19.png</img>
+    <text>
+      <sk>Zákaz jazdy motorových vozidiel vo vzdialenosti kratšej ako je vyznačené</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>B</skratka>
+      <vyklad>Zákazové značky</vyklad>
+    </kategoria>
+    <img>b20.png</img>
+    <text>
+      <sk>Zákaz vjazdu vozidiel alebo súprav vozidiel, ktorých dĺžka presahuje vyznačenú hranicu</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>B</skratka>
+      <vyklad>Zákazové značky</vyklad>
+    </kategoria>
+    <img>b23.png</img>
+    <text>
+      <sk>Zákaz vjazdu vozidiel, ktorých šírka presahuje vyznačenú hranicu</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>B</skratka>
+      <vyklad>Zákazové značky</vyklad>
+    </kategoria>
+    <img>b24.png</img>
+    <text>
+      <sk>Zákaz vjazdu vozidiel, ktorých výška presahuje vyznačenú hranicu</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>B</skratka>
+      <vyklad>Zákazové značky</vyklad>
+    </kategoria>
     <img>b28.png</img>
     <text>
       <sk>Zákaz otáčania</sk>
       <en>No U-Turn</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>B</skratka>
+      <vyklad>Zákazové značky</vyklad>
+    </kategoria>
+    <img>b29a.png</img>
+    <text>
+      <sk>Zákaz predchádzania</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>B</skratka>
+      <vyklad>Zákazové značky</vyklad>
+    </kategoria>
+    <img>b32a.png</img>
+    <text>
+      <sk>Zákaz zvukových výstražných zariadení</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>B</skratka>
+      <vyklad>Zákazové značky</vyklad>
+    </kategoria>
+    <img>b33.png</img>
+    <text>
+      <sk>Zákaz státia</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>B</skratka>
+      <vyklad>Zákazové značky</vyklad>
+    </kategoria>
+    <img>b34.png</img>
+    <text>
+      <sk>Zákaz zastavenia</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>B</skratka>
+      <vyklad>Zákazové značky</vyklad>
+    </kategoria>
+    <img>b37.png</img>
+    <text>
+      <sk>Iný zákaz</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>B</skratka>
+      <vyklad>Zákazové značky</vyklad>
+    </kategoria>
+    <img>b38.png</img>
+    <text>
+      <sk>Povinnosť zastaviť vozidlo</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>B</skratka>
+      <vyklad>Zákazové značky</vyklad>
+    </kategoria>
+    <img>b39.png</img>
+    <text>
+      <sk>Koniec viacerých zákazov</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>A</skratka>
+      <vyklad>Výstražné značky</vyklad>
+    </kategoria>
+    <img>a1a.png</img>
+    <text>
+      <sk>Zákruta vpravo</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>A</skratka>
+      <vyklad>Výstražné značky</vyklad>
+    </kategoria>
+    <img>a2a.png</img>
+    <text>
+      <sk>Dvojitá zákruta, prvá vpravo</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>A</skratka>
+      <vyklad>Výstražné značky</vyklad>
+    </kategoria>
+    <img>a3a.png</img>
+    <text>
+      <sk>Nebezpečné klesanie</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>A</skratka>
+      <vyklad>Výstražné značky</vyklad>
+    </kategoria>
+    <img>a3b.png</img>
+    <text>
+      <sk>Nebezpečné stúpanie</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>A</skratka>
+      <vyklad>Výstražné značky</vyklad>
+    </kategoria>
+    <img>a4a.png</img>
+    <text>
+      <sk>Zúžená vozovka z oboch strán</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>A</skratka>
+      <vyklad>Výstražné značky</vyklad>
+    </kategoria>
+    <img>a4b.png</img>
+    <text>
+      <sk>Zúžená vozovka sprava</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>A</skratka>
+      <vyklad>Výstražné značky</vyklad>
+    </kategoria>
+    <img>a4c.png</img>
+    <text>
+      <sk>Zúžená vozovka zľava</sk>
+      <en>--</en>
     </text>
   </znacka>
   <znacka>
@@ -52,10 +338,131 @@
       <skratka>A</skratka>
       <vyklad>Výstražné značky</vyklad>
     </kategoria>
+    <img>a6.png</img>
+    <text>
+      <sk>Spomaľovací prah</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>A</skratka>
+      <vyklad>Výstražné značky</vyklad>
+    </kategoria>
+    <img>a8.png</img>
+    <text>
+      <sk>Nebezpečenstvo šmyku</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>A</skratka>
+      <vyklad>Výstražné značky</vyklad>
+    </kategoria>
+    <img>a11.png</img>
+    <text>
+      <sk>Odletujúci štrk</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>A</skratka>
+      <vyklad>Výstražné značky</vyklad>
+    </kategoria>
     <img>a12.png</img>
     <text>
       <sk>Svetelné signály</sk>
       <en>Traffic Signal</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>A</skratka>
+      <vyklad>Výstražné značky</vyklad>
+    </kategoria>
+    <img>a13.png</img>
+    <text>
+      <sk>Priechod pre chodcov</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>A</skratka>
+      <vyklad>Výstražné značky</vyklad>
+    </kategoria>
+    <img>a14.png</img>
+    <text>
+      <sk>Pozor, chodci</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>A</skratka>
+      <vyklad>Výstražné značky</vyklad>
+    </kategoria>
+    <img>a18.png</img>
+    <text>
+      <sk>Pozor, zver</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>A</skratka>
+      <vyklad>Výstražné značky</vyklad>
+    </kategoria>
+    <img>a19.png</img>
+    <text>
+      <sk>Práca na ceste</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>A</skratka>
+      <vyklad>Výstražné značky</vyklad>
+    </kategoria>
+    <img>a20.png</img>
+    <text>
+      <sk>Padajúce kamene</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>A</skratka>
+      <vyklad>Výstražné značky</vyklad>
+    </kategoria>
+    <img>a25.png</img>
+    <text>
+      <sk>Železničné priecestie so závorami</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>A</skratka>
+      <vyklad>Výstražné značky</vyklad>
+    </kategoria>
+    <img>a26.png</img>
+    <text>
+      <sk>Železničné priecestie bez závor</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>C</skratka>
+      <vyklad>Príkazové značky</vyklad>
+    </kategoria>
+    <img>c1.png</img>
+    <text>
+      <sk>Prikázaný smer jazdy priamo</sk>
+      <en>Go Straight</en>
     </text>
   </znacka>
   <znacka>
@@ -82,6 +489,50 @@
   </znacka>
   <znacka>
     <kategoria>
+      <skratka>C</skratka>
+      <vyklad>Príkazové značky</vyklad>
+    </kategoria>
+    <img>c15.png</img>
+    <text>
+      <sk>Najnižšia dovolená rýchlosť</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>C</skratka>
+      <vyklad>Príkazové značky</vyklad>
+    </kategoria>
+    <img>c18.png</img>
+    <text>
+      <sk>Koniec príkazu</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>C</skratka>
+      <vyklad>Príkazové značky</vyklad>
+    </kategoria>
+    <img>c22b.png</img>
+    <text>
+      <sk>Zníženie počtu jazdných pruhov</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>C</skratka>
+      <vyklad>Príkazové značky</vyklad>
+    </kategoria>
+    <img>c22c.png</img>
+    <text>
+      <sk>Zvýšenie počtu jazdných pruhov pre pomalé vozidlá</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
       <skratka>P</skratka>
       <vyklad>Značky upravujúce prednosť v jazde</vyklad>
     </kategoria>
@@ -93,13 +544,57 @@
   </znacka>
   <znacka>
     <kategoria>
-      <skratka>II</skratka>
-      <vyklad>Informatívne iné značky</vyklad>
+      <skratka>P</skratka>
+      <vyklad>Značky upravujúce prednosť v jazde</vyklad>
     </kategoria>
-    <img>ii11.png</img>
+    <img>p2.png</img>
     <text>
-      <sk>Reštaurácia</sk>
-      <en>Restaurant</en>
+      <sk>Stoj, daj prednosť v jazde</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>P</skratka>
+      <vyklad>Značky upravujúce prednosť v jazde</vyklad>
+    </kategoria>
+    <img>p3.png</img>
+    <text>
+      <sk>Daj prednosť v jazde električke</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>P</skratka>
+      <vyklad>Značky upravujúce prednosť v jazde</vyklad>
+    </kategoria>
+    <img>p5.png</img>
+    <text>
+      <sk>Križovatka s vedľajšou cestou</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>P</skratka>
+      <vyklad>Značky upravujúce prednosť v jazde</vyklad>
+    </kategoria>
+    <img>p8.png</img>
+    <text>
+      <sk>Hlavná cesta</sk>
+      <en>--</en>
+    </text>
+  </znacka>
+  <znacka>
+    <kategoria>
+      <skratka>P</skratka>
+      <vyklad>Značky upravujúce prednosť v jazde</vyklad>
+    </kategoria>
+    <img>p10.png</img>
+    <text>
+      <sk>Prednosť protiidúcich vozidiel</sk>
+      <en>--</en>
     </text>
   </znacka>
 </znacky>  
