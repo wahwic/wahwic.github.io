@@ -162,6 +162,7 @@ function resetgame(){
 	$('#menu').append('<li id="buttreset" class="list-group-item list-group-item-action bg-transparent" onclick="resetgame()">Opakovať hru</li><br>');
 	$('#menu').append('<li id="buttsave" class="list-group-item list-group-item-action bg-transparent" onclick="savesession()">Uložiť hru</li>');
 	$('#menu').append('<li id="buttload" class="list-group-item list-group-item-action bg-transparent" onclick="loadsession()">Načítať hru</li><br>');
+	$('#menu').append('<li id="buttquit" class="list-group-item list-group-item-action bg-transparent" onclick="location.href=\'https://wahwic.github.io\'">Ukončiť hru</li>');
 	$('#menu').append('<li><button id="buttback" type="button" class="btn btn-outline-dark" onclick="goback()" disabled>&#60;== Vrátiť ťah</button></li>');
 	if(klok != null) {clearInterval(klok);}
 	start = new Date;
