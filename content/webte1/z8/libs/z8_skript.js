@@ -1,136 +1,141 @@
-var skratka = [], vyklad = [], pic = [], sk = [], en = [], currentJ = [], currentI = [];	//obsahujú xml dáta
-var i, j, k, index;																			//pomocné
-var timedone;																				//konečný čas dokončenia jednej hry
-var finalscore;																				//konečné skóre jednej hry
-var start;																					//čas začiatku jednej hry
-var visibleanswer = true;																	//pomocná pre kontrolu viditeľnosti polí pre potiahnutie
-var gamecount = 0;																			//aktuálne hrané kolo
-var score = 0;																				//skóre pre danú hru
-var back = 0;																				//počet použítých Undo
-var storedData;																				//pomocná pre localstorage
-var amloading = false;																		//aby sa nezresetovali premenné na nulu pri loadovaní
-$("#posfinished").fadeOut(0);
+class Sign {
+	constructor(category, type, imgName, skDesc){
+		this.category = category;
+		this.type = type;
+		this.imgName = imgName;
+		this.skDesc = skDesc;
+	}
+}
 
-//Prečítanie xml súboru--------------------------------------------------------
+let arrayOfSigns = new Array();
+var currentJ = [], currentI = [];
+var i, j, k, index = 0;
+var timeGameFinished;
+var finalScore;
+var startTime;
+var visibleAnswer = true;
+var currentRound = 0;
+var currentScore = 0;
+var undoActions = 0;
+var storedData;
+var isLoading = false;
+$('#posfinished').fadeOut(0);
+
 $.ajax({
-	type: "GET",
-	url: "znacky.xml",
-	dataType: "xml",
+	type: 'GET',
+	url: 'znacky.xml',
+	dataType: 'xml',
 	success: function(xml){
-		var a = 0;
 		$(xml).find('znacka').each(function(){
-			skratka[a] = $(this).find('kategoria').find('skratka').text();
-			vyklad[a] = $(this).find('kategoria').find('vyklad').text();
-			pic[a] = $(this).find('img').text();
-			sk[a] = $(this).find('text').find('sk').text();
-			en[a] = $(this).find('text').find('en').text();
-			a++;
+			var category = $(this).find('kategoria').find('skratka').text();
+			var type = $(this).find('kategoria').find('vyklad').text();
+			var imgName = $(this).find('img').text();
+			var skDesc = $(this).find('text').find('sk').text();
+			arrayOfSigns.push(new Sign(category, type, imgName, skDesc));
 			});
 		}
 });
-//=============================================================================
 
-//50% šanca na vygenerovanie správnej kombinácie
+//50% to generate correct img+description combination
 function generateGame(){
 	for (i = 0; i <= 9; i++){
-		currentJ[i] = Math.floor((Math.random() * (pic.length)));
+		currentJ[i] = Math.floor((Math.random() * (arrayOfSigns.length)));
 		var test = Math.floor((Math.random() * 2));							
 		if(test == 0){
-			currentI[i] = Math.floor((Math.random() * (pic.length)));
+			currentI[i] = Math.floor((Math.random() * (arrayOfSigns.length)));
 		} else {
 			currentI[i] = currentJ[i];
 		}
 	}
 }
 
-//Jedno kolo hry---------------------------------------------------------------
 function nextTurn(index){
 	j = currentJ[index];
 	i = currentI[index];
-	$("#posfinished").fadeIn(0);
-	$("#output").empty();
-	$("#output").append('<div class="text-center onetry" id="'+i+'"><p class="text-center">'+skratka[i]+' - '+vyklad[i]+'<br>'+en[i]+'<br>'+sk[i]+'</p><img id="'+i+'" class="draggable" src="img/'+pic[j]+'"></div>').hide().fadeIn(250);
-	$("#turn").html((index)+"/"+(skratka.length+1)+" kolo");
-	if ((back < 3) && (gamecount > 0)){
-		$("#buttback").prop("disabled", false);
+	$('#posfinished').fadeIn(0);
+	$('#output').empty();
+	$('#output').append('<div class="text-center onetry" id="'+i+'"><p class="text-center">'+ arrayOfSigns[i].category +' - '+ arrayOfSigns[i].type +'<br>'+arrayOfSigns[i].skDesc+'</p><img id="'+i+'" class="draggable" src="img/'+arrayOfSigns[j].imgName+'"></div>').hide().fadeIn(250);
+	$('#turn').html((index)+'/10 kolo');
+	if ((undoActions < 3) && (currentRound > 0)){
+		$('#buttback').prop('disabled', false);
 	} else {
-		$("#buttback").prop("disabled", true);
+		$('#buttback').prop('disabled', true);
 	}
-	if(visibleanswer) {
-		visibleanswer = false;
-		$(".answer").css('opacity', function(i, o){
-		return parseFloat(o).toFixed(1) === '0' ? 0 : 1;
+	if(visibleAnswer) {
+		visibleAnswer = false;
+		$('.answer').css('opacity', function(i, o){
+			return parseFloat(o).toFixed(1) === '0' ? 0 : 1;
 		});
 	}
-	savelocal()
-	$( ".draggable" ).draggable({
+	saveLocal()
+	$('.draggable').draggable({
 		revert: true,
-		/* containment: "#gameWindow", */
+		containment: '#gameWindow',
 		zIndex: 10
 	});
-	$( ".answer" ).droppable({
+	$('.answer').droppable({
 		drop: checkAnswer 
 	});
 }
-//=============================================================================
 
 //Drag'n'drop------------------------------------------------------------------
 function checkAnswer(event, ui){
-	var textID = ui.draggable.attr("id");
-	console.log(textID);
-	var answer = $(this).attr("id");
-	console.log(answer);
-	if(answer == "nespravne"){
+	var textID = ui.draggable.attr('id');
+	var answer = $(this).attr('id');
+
+	if(answer == 'nespravne'){
 		if(textID == j){
-			score-=0.5;
+			currentScore -= 0.5;
 		} else {
-			score++;
+			currentScore++;
 		}
 	} else {
 		if(textID != j){
-			score-=0.5;
+			currentScore -= 0.5;
 		} else {
-			score++;
+			currentScore++;
 		}
 	}
-	$("#finished").append('<img src="img/'+pic[j]+'" draggable="false">');								//TODO <table>	//TODO <span>"'+vyklad[textID]+'"</span> 
-	$(".Score").text("Skóre: " + score);
+	$('#finished').append('<img src="img/'+arrayOfSigns[j].imgName+'" draggable="false">');								//TODO <table>	//TODO <span>"'+vyklad[textID]+'"</span> 
+	$('.Score').text('Skóre: ' + currentScore);
 	
-	gamecount++;
-	nextTurn(++index);
-	if(gamecount == 10){
-		$("#turn").fadeOut(250);
-		$("#output").fadeOut(250);
-		$(".Timer").fadeOut(250);
-		$(".Score").fadeOut(250);
-		$("#posfinished").fadeOut(250);
+	currentRound++;
+	if(currentRound == 10) {
+		$('#turn').fadeOut(250);
+		$('#output').fadeOut(250);
+		$('.Timer').fadeOut(250);
+		$('.Score').fadeOut(250);
+		$('#posfinished').fadeOut(250);
 		
-		timedone = Math.round((new Date - start) / 1000, -1);
-		timedone = Math.ceil(timedone);
-		clearInterval(klok);
-		visibleanswer = true;
-		$(".answer").css('opacity', function(i,o){
+		timeGameFinished = Math.round((new Date - startTime) / 1000, -1);
+		timeGameFinished = Math.ceil(timeGameFinished);
+		clearInterval(timer);
+		visibleAnswer = true;
+		$('.answer').css('opacity', function(i,o){
 			return parseFloat(o).toFixed(1) === '1' ? 1 : 0;
 		});
-		finalscore = (score - (timedone*0.05)).toFixed(1);
-		if(checkhighscore(finalscore)){
+		finalScore = (currentScore - (timeGameFinished*0.05)).toFixed(1);
+		if(checkHighscore(finalScore)){
 			$('#board').empty();
-			$('#board').append(finalscore);
+			$('#board').append(finalScore);
 		}
-		savelocal();
-		$('#Endgame').text("Koniec hry, tvoje skóre je " + finalscore + "b!");
+		saveLocal();
+		$('#Endgame').text('Koniec hry, tvoje skóre je ' + finalScore + 'b!');
+	} else {
+		index++;
+		nextTurn(index);
 	}
 }
 //=============================================================================
 
-start = new Date;
-var klok = setInterval(function() {$('.Timer').text("Uplynutý čas: " + Math.round((new Date - start) / 1000, 0) + "s");}, 1000);
-clearInterval(klok);
+startTime = new Date;
+var timer = setInterval(function() {$('.Timer').text('Uplynutý čas: ' + Math.round((new Date - startTime) / 1000, 0) + 's');}, 1000);
+clearInterval(timer);
 
 //Highscore--------------------------------------------------------------------
-function checkhighscore(currentscore){
+function checkHighscore(currentscore){
 	var a = parseInt(currentscore, 10);
-	var b = parseInt($("#board").html(), 10);
+	var b = parseInt($('#board').html(), 10);
 	if(a >= b){
 		return 1;
 	} else {
@@ -140,130 +145,105 @@ function checkhighscore(currentscore){
 //=============================================================================
 
 //Štart hry--------------------------------------------------------------------
-function newgame(){
+function newGame(){
 	generateGame();
-	resetgame();
+	resetGame();
 }
 //=============================================================================
 
 //Reset hry--------------------------------------------------------------------
-function resetgame(){
+function resetGame(){
 	$('#Endgame').empty();
 	$('.Timer').text('Uplynutý čas: 0s').fadeIn(0);
 	$('.Score').text('Skóre: 0').fadeIn(0);
-	$("#turn").fadeIn(0);
+	$('#turn').fadeIn(0);
 	
 	$('#finished').empty();
-	if(!amloading){
-		gamecount = score = index = finalscore = timedone = back = 0;
-	}
+	//if(!isLoading){
+		currentRound = currentScore = index = finalScore = timeGameFinished = undoActions = 0;
+	//}
 	$('#menu').empty();
-	$('#menu').append('<li id="butt" class="list-group-item list-group-item-action bg-transparent" onclick="newgame()">Nová hra</li>');
-	$('#menu').append('<li id="buttreset" class="list-group-item list-group-item-action bg-transparent" onclick="resetgame()">Opakovať hru</li><br>');
-	$('#menu').append('<li id="buttsave" class="list-group-item list-group-item-action bg-transparent" onclick="savesession()">Uložiť hru</li>');
-	$('#menu').append('<li id="buttload" class="list-group-item list-group-item-action bg-transparent" onclick="loadsession()">Načítať hru</li><br>');
+	$('#menu').append('<li id="butt" class="list-group-item list-group-item-action bg-transparent" onclick="newGame()">Nová hra</li>');
+	$('#menu').append('<li id="buttreset" class="list-group-item list-group-item-action bg-transparent" onclick="resetGame()">Opakovať hru</li><br>');
+	$('#menu').append('<li id="buttsave" class="list-group-item list-group-item-action bg-transparent" onclick="saveSession()">Uložiť hru</li>');
+	$('#menu').append('<li id="buttload" class="list-group-item list-group-item-action bg-transparent" onclick="loadSession()">Načítať hru</li><br>');
 	$('#menu').append('<li id="buttquit" class="list-group-item list-group-item-action bg-transparent" onclick="location.href=\'https://wahwic.github.io\'">Ukončiť hru</li>');
 	$('#menu').append('<li><button id="buttback" type="button" class="btn btn-outline-dark" onclick="goback()" disabled>&#60;== Vrátiť ťah</button></li>');
-	if(klok != null) {clearInterval(klok);}
-	start = new Date;
-	klok = setInterval(function() {$('.Timer').text("Uplynutý čas: " + Math.round((new Date - start) / 1000, 0) + "s");}, 1000);
+	if(timer != null) {
+		clearInterval(timer);
+	}
+	startTime = new Date;
+	timer = setInterval(function() {$('.Timer').text('Uplynutý čas: ' + Math.round((new Date - startTime) / 1000, 0) + 's');}, 1000);
 	nextTurn(index);
 }
 //=============================================================================
 
 //Vrátenie kroku hry-----------------------------------------------------------
-function goback(){
-	if(gamecount == 10){
+function goBack(){
+	if(currentRound == 10){
 		$('#Endgame').empty();
 		$('.Timer').text('Uplynutý čas: 0s').fadeIn(0);
 		$('.Score').text('Skóre: 0').fadeIn(0);
-		$("#turn").fadeIn(0);
+		$('#turn').fadeIn(0);
 	}
-	gamecount--;
-	score -= 0.5;
-	$(".Score").text("Skóre: " + score);
-	back++;
-	$("#finished").children().last().remove();
+	currentRound--;
+	currentScore -= 0.5;
+	$('.Score').text('Skóre: ' + currentScore);
+	undoActions++;
+	$('#finished').children().last().remove();
 	nextTurn(--index);
 }
 //=============================================================================
 
 //Storage----------------------------------------------------------------------
-function savesession(){
-	if(gamecount < 10){
-		sessionStorage.setItem("currentgame_J_key",  JSON.stringify(currentJ));
-		sessionStorage.setItem("currentgame_I_key",  JSON.stringify(currentI));
-		sessionStorage["gamecount_key"] = gamecount;
-		sessionStorage["index_key"] = index;
-		sessionStorage["score_key"] = score;
-		sessionStorage["back_key"] = back;
-		sessionStorage["finalscore_key"] = $("#board").html();
+function saveSession(){
+	if(currentRound < 10){
+		sessionStorage.setItem('currentgame_J_key',  JSON.stringify(currentJ));
+		sessionStorage.setItem('currentgame_I_key',  JSON.stringify(currentI));
+		sessionStorage['gamecount_key'] = currentRound;
+		sessionStorage['index_key'] = index;
+		sessionStorage['score_key'] = currentScore;
+		sessionStorage['back_key'] = undoActions;
+		sessionStorage['finalscore_key'] = $('#board').html();
 	} else {
 		alert('Nemôžeš uložiť hotovú hru.');
 	}
 }
 
-function savelocal(){
-	localStorage.setItem("currentgame_J_key",  JSON.stringify(currentJ));
-	localStorage.setItem("currentgame_I_key",  JSON.stringify(currentI));
-	localStorage["gamecount_key"] = gamecount;
-	localStorage["index_key"] = index;
-	localStorage["score_key"] = score;
-	localStorage["back_key"] = back;
-	localStorage["finalscore_key"] = $("#board").html();
+function saveLocal(){
+	localStorage.setItem('currentgame_J_key',  JSON.stringify(currentJ));
+	localStorage.setItem('currentgame_I_key',  JSON.stringify(currentI));
+	localStorage['gamecount_key'] = currentRound;
+	localStorage['index_key'] = index;
+	localStorage['score_key'] = currentScore;
+	localStorage['back_key'] = undoActions;
+	localStorage['finalscore_key'] = $('#board').html();
 }
 
-function loadsession(){
+function loadSession(){
 	if (sessionStorage.length > 0) {
-		amloading = true;
-		gamecount = sessionStorage["gamecount_key"];
-		index = sessionStorage["index_key"]; 
-		score = sessionStorage["score_key"];
-		back = sessionStorage["back_key"];
-		$("#board").html(sessionStorage["finalscore_key"]);
+		isLoading = true;
+		currentRound = sessionStorage['gamecount_key'];
+		index = sessionStorage['index_key']; 
+		currentScore = sessionStorage['score_key'];
+		undoActions = sessionStorage['back_key'];
+		$('#board').html(sessionStorage['finalscore_key']);
 		
-		currentJ = JSON.parse(sessionStorage.getItem("currentgame_J_key"));
-		currentI = JSON.parse(sessionStorage.getItem("currentgame_I_key"));
+		currentJ = JSON.parse(sessionStorage.getItem('currentgame_J_key'));
+		currentI = JSON.parse(sessionStorage.getItem('currentgame_I_key'));
 		
-		resetgame();
-		$(".Score").text("Skóre: " + score);
-		$('.Timer').text("Uplynutý čas: " + Math.round((new Date - start) / 1000, 0) + "s");
+		resetGame();
+		$('.Score').text('Skóre: ' + currentScore);
+		$('.Timer').text('Uplynutý čas: ' + Math.round((new Date - startTime) / 1000, 0) + 's');
 		
 		for(k = 0; k <= index-1; k++){
-			$("#finished").append('<img src="img/'+pic[currentJ[k]]+'" draggable="false">');		//TODO <table>
+			$('#finished').append('<img src="img/'+pic[currentJ[k]]+'" draggable="false">');		//TODO <table>
 		}
-		amloading = false;
+		isLoading = false;
 	} else {
-		alert("Žiadna hra nieje uložená.");
+		alert('Žiadna hra nieje uložená.');
 	}
 }
-
-$(document).ready(function() {
-	if (localStorage.length > 0){
-		if (localStorage.gamecount_key < 10) {
-			amloading = true;
-			gamecount = localStorage["gamecount_key"];
-			index = localStorage["index_key"]; 
-			score = localStorage["score_key"];
-			back = localStorage["back_key"];
-			$("#board").html(localStorage["finalscore_key"]);
-			
-			currentJ = JSON.parse(localStorage.getItem("currentgame_J_key"));
-			currentI = JSON.parse(localStorage.getItem("currentgame_I_key"));
-			
-			resetgame();
-			$(".Score").text("Skóre: " + score);
-			$('.Timer').text("Uplynutý čas: " + Math.round((new Date - start) / 1000, 0) + "s");
-		
-			for(k = 0; k <= index-1; k++){
-				$("#finished").append('<img src="img/'+pic[currentJ[k]]+'" draggable="false">');		//TODO <table> or <div>
-			}
-			amloading = false;
-		} else {
-			$("#board").html(localStorage["finalscore_key"]);
-		}
-	}
-});
 
 function clearStorage(){
 	localStorage.clear();
@@ -271,3 +251,29 @@ function clearStorage(){
 	window.location.replace('index.html');
 }
 //=============================================================================
+$(document).ready(function() {
+	if (localStorage.length > 0){
+		if (localStorage.gamecount_key < 10) {
+			isLoading = true;
+			currentRound = localStorage['gamecount_key'];
+			index = localStorage['index_key']; 
+			currentScore = localStorage['score_key'];
+			undoActions = localStorage['back_key'];
+			$('#board').html(localStorage['finalscore_key']);
+			
+			currentJ = JSON.parse(localStorage.getItem('currentgame_J_key'));
+			currentI = JSON.parse(localStorage.getItem('currentgame_I_key'));
+			
+			resetGame();
+			$('.Score').text('Skóre: ' + currentScore);
+			$('.Timer').text('Uplynutý čas: ' + Math.round((new Date - startTime) / 1000, 0) + 's');
+		
+			for(k = 0; k <= index-1; k++){
+				$('#finished').append('<img src="img/'+arrayOfSigns[currentJ[k]].imgName+'" draggable="false">');		//TODO <table> or <div>
+			}
+			isLoading = false;
+		} else {
+			$('#board').html(localStorage['finalscore_key']);
+		}
+	}
+});
