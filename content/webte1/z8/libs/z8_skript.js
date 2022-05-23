@@ -161,6 +161,7 @@ function resetGame(){
 	$('#menu').append('<li id="buttreset" class="list-group-item list-group-item-action bg-transparent" onclick="resetGame()">Opakovať hru</li><br>');
 	$('#menu').append('<li id="buttsave" class="list-group-item list-group-item-action bg-transparent" onclick="saveSession()">Uložiť hru</li>');
 	$('#menu').append('<li id="buttload" class="list-group-item list-group-item-action bg-transparent" onclick="loadSession()">Načítať hru</li><br>');
+	$('#menu').append('<li id="buttclear" class="list-group-item list-group-item-action bg-transparent" onclick="clearStorage()">Resetovať (temp fix)</li>');
 	$('#menu').append('<li id="buttquit" class="list-group-item list-group-item-action bg-transparent" onclick="location.href=\'https://wahwic.github.io\'">Ukončiť hru</li>');
 	$('#menu').append('<li><button id="buttback" type="button" class="btn btn-outline-dark" onclick="goBack()" disabled>&#60;== Vrátiť ťah</button></li>');
 	if(timer != null) {
